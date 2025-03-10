@@ -16,4 +16,29 @@ vaadin-text-field.bordered::part(input-field) {
   background-color: var(--lumo-base-color);
 }
 
+.blog-post {
+  border: 2px solid lightslategrey;
+  border-radius: 4px;
+  padding: 1.1em 1.5em;
+  margin-block: 2em;
+  width: 320px;
+}
 
+.blog-post * {
+  cursor: auto;
+  color: rgb(30, 30, 30);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+
+.posts {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-inline: auto;
+  gap: 1em;
+  flex-wrap: wrap;
+}
