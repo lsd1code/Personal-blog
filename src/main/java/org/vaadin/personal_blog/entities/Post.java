@@ -3,29 +3,39 @@ package org.vaadin.personal_blog.entities;
 import java.time.LocalDate;
 
 public class Post {
-  private long id;
+  private String id;
   private String title;
   private String description;
   private LocalDate createdAt;
   private LocalDate lastEditedAt;
 
-  static long blogId = 0;
+  public Post() {
+  }
 
-  public Post() {}
-
-  public Post(String title, String description) {
-    this.id = ++blogId;
+  public Post(String id, String title, String description) {
+    this.id = id;
     this.title = title;
     this.description = description;
     this.createdAt = LocalDate.now();
     this.lastEditedAt = null;
   }
 
+  private String generateId() {
+    long id = 0;
+
+    for (int i = 0; i < 5; i++) {
+      var randVal = (int) (Math.random() * 10);
+      id = (id * 10) + randVal;
+    }
+
+    return String.valueOf(id);
+  }
+
   public void setTitle(String title) {
     this.title = title;
   }
 
-  public void setId(long id){
+  public void setId(String id) {
     this.id = id;
   }
 
@@ -57,13 +67,14 @@ public class Post {
     return lastEditedAt;
   }
 
-  public long getId() {
+  public String getId() {
     return id;
   }
 
   @Override
   public String toString() {
-    return "Post [title=" + title + ", description=" + description + ", createdAt=" + createdAt + ", lastEditedAt="
+    return "Post [id=" + id + ", title=" + title + ", description=" + description + ", createdAt=" + createdAt
+        + ", lastEditedAt="
         + lastEditedAt + "]";
   }
 }
