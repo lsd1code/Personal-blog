@@ -6,8 +6,8 @@ public class Post {
   private String id;
   private String title;
   private String description;
-  private LocalDate createdAt;
-  private LocalDate lastEditedAt;
+  private String createdAt;
+  private String lastEditedAt;
 
   public Post() {
   }
@@ -16,7 +16,7 @@ public class Post {
     this.id = id;
     this.title = title;
     this.description = description;
-    this.createdAt = LocalDate.now();
+    this.createdAt = String.valueOf(LocalDate.now());
     this.lastEditedAt = null;
   }
 
@@ -43,11 +43,11 @@ public class Post {
     this.description = description;
   }
 
-  public void setLastEditedAt(LocalDate lastEditedAt) {
+  public void setLastEditedAt(String lastEditedAt) {
     this.lastEditedAt = lastEditedAt;
   }
 
-  public void setCreatedAt(LocalDate createdAt) {
+  public void setCreatedAt(String createdAt) {
     this.createdAt = createdAt;
   }
 
@@ -59,11 +59,11 @@ public class Post {
     return description;
   }
 
-  public LocalDate getCreatedAt() {
+  public String getCreatedAt() {
     return createdAt;
   }
 
-  public LocalDate getLastEditedAt() {
+  public String getLastEditedAt() {
     return lastEditedAt;
   }
 
