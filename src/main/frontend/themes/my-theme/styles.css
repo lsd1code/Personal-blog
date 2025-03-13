@@ -16,6 +16,10 @@ vaadin-text-field.bordered::part(input-field) {
   background-color: var(--lumo-base-color);
 }
 
+html {
+  overflow-x: hidden;
+}
+
 .blog-post {
   border: 2px solid lightslategrey;
   border-radius: 4px;
@@ -33,7 +37,6 @@ a:hover {
   text-decoration: none;
 }
 
-
 .posts {
   display: flex;
   justify-content: space-around;
@@ -41,4 +44,37 @@ a:hover {
   margin-inline: auto;
   gap: 1em;
   flex-wrap: wrap;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  height: fit-content;
+  margin-block: 1em;
+  width: 100%;
+}
+
+.new-post-btn {
+  cursor: pointer;
+}
+
+.main-content {
+  width: 100dvw;
+}
+
+.blog-container {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1em auto;
+  padding: 1em 1.5em;
+
+  border: .5px solid lightgray;
+  border-radius: 3px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.edit-btn, .delete-btn {
+  cursor: pointer;
 }
